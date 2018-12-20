@@ -89,4 +89,6 @@ add_library(enet STATIC
     ${SOURCE_FILES}
 )
 
-target_link_libraries(enet winmm ws2_32)
+if (MSVC)
+    target_link_libraries(enet winmm ws2_32)
+endif()
